@@ -4,11 +4,12 @@ using namespace cv;
 
 class Hough : public Detector {
 public:
-    Hough(){};
     
     bool init(Mat &src)
     {
-        image = src;
+        std::cout<<"init\n";
+        image =  src.clone();
+        return 0;
     }
 
     int count()
@@ -50,3 +51,7 @@ private:
     vector<Vec3f> circles;
     Mat image;
 };
+
+cv::Ptr<Detector> createHoughDetector(){
+    return cv::Ptr<Detector>(new Hough());
+}

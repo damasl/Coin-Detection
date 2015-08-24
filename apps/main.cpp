@@ -27,9 +27,14 @@ int main(int argc, char** argv)
         return -1;
 
     Detector* detector = createDetector(method);
-    detector->init(src);
-    detector->count();
+    std::cout<<detector;
+    if(!detector->init(src))
+    std::cout<<"ok1\n";
+    else std::cout<<"not ok1\n";
+    int count = detector->count();
+    std::cout<<"ok2\n";
     detector->draw();
+    std::cout<<"ok3\n";
 
     return 0;
 }

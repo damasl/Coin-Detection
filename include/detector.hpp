@@ -7,7 +7,7 @@
 
 class Detector {
 public:
-    Detector(){};
+    ~Detector(){};
     virtual int count() = 0;
     virtual void draw() = 0;
     virtual bool init(cv::Mat &src) = 0;
